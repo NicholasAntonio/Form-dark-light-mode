@@ -1,0 +1,214 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+
+:root{
+   --color-light-100: #f8f8fa;
+
+   --color-dark-0 : #0c0a36;
+   --color-dark-50: #020202;
+
+   --color-purple-50: #89088d ;
+   --color-purple-100: #e00cd6;
+
+   --color-green-100: #00ce7b;
+   --color-green-50:  #b0ff00;
+}
+
+
+*{
+   font-family: "Work Sans", sans-serif;
+   margin:0;
+   padding:0;
+   box-sizing:border-box;
+}
+
+#container{
+   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+   width:100%;
+   height:100vh;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   animation: dark-light-back 0.5s ease-in-out;
+}
+
+#login-form{
+   background: var(--color-light-100);
+   display: flex;
+   flex-direction: column;
+   padding:25px 35px;
+   border-radius: 15px;
+   box-shadow: 0px 0px 30px var(--color-dark-50);
+   gap: 30px;
+   animation: dark-light 0.5s ease-in-out;
+}
+
+#form-top{
+   display:flex;
+   margin-top: 20px;
+   align-items: center;
+   justify-content: space-between;
+}
+
+#form-top>h1{
+   font-size:40px;
+}
+
+#icon-mode{
+   cursor:pointer;
+   font-size: 25px;
+}
+
+#icon-mode:hover{
+   transform:scale(1.2);
+
+}
+
+
+#medias{
+   font-size: 25px;
+   display: flex;
+   justify-content: space-around;
+}
+
+
+#medias>:hover{
+   transform: scale(1.2);
+}
+
+#login-body{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap:20px; 
+}
+
+.input-box >label{
+   font-size: 15px;
+   color: rgb(190, 169, 169)
+}
+
+.input-field{
+   display: flex;
+   align-items: center;
+   gap:15px;
+   padding:3px;
+   cursor: text;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.651);
+}
+
+.input-field > i{
+   font-size: 18px;
+   color: var(--color-dark-50);
+}
+
+.input-field >input{
+   border: none;
+   background-color:transparent;
+   width: 200px;
+   font-size: 18px;
+
+} 
+
+.input-field >input:focus{
+   outline: none;
+}
+
+.forgot-password >a{
+   text-decoration: none;
+   font-size: 14px;
+   color: var(--color-dark-50);
+}
+
+.forgot-password>  a:hover{
+   color:var(--color-green-100);
+}
+
+#login-button{
+   border:none;
+   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+   font-size: 18px;
+   border-radius: 3px;
+   font-weight: bold;
+   color: var(--color-light-100);
+   padding:7px;
+   cursor: pointer;
+}
+#login-button:hover{
+   transform: scale(1.05);
+}
+
+.darkmode#container{
+   background-image: linear-gradient(to right top, #051937, #151d49, #2d1f58, #481c63, #651069);
+   animation: light-dark-back 0.5s ease-in-out;
+}
+
+.darkmode#login-form{
+   color: var(--color-light-100);
+   background-color: var(--color-dark-0);
+   animation: light-dark 0.5s ease-in-out;
+}
+
+.darkmode#login-form .input-field>input,
+.darkmode#login-form .input-field>i
+{
+   color:var(--color-light-100);
+}
+
+.darkmode#login-form .input-field{
+   border-bottom: 1px solid var(--color-light-100);
+}
+
+.darkmode#login-button{
+   background-image: linear-gradient(to right top, #051937, #151d49, #2d1f58, #481c63, #651069);
+}
+
+.darkmode#forgot-password >a{   
+   color: var(--color-light-100)
+}
+
+@keyframes dark-light{
+   0%{ 
+      background-color: var(--color-dark-0);
+      
+   }
+   100%{
+      background-color: var(--color-light-100);
+      
+   }
+}
+
+@keyframes light-dark{
+   0%{
+      background-color: var(--color-light-100);
+      
+   }
+   100%{
+      background-color: var(--color-dark-0);
+      
+   }
+}
+
+@keyframes dark-light-back{
+   from{  
+      background-image: linear-gradient(to right top, #051937, #151d49, #2d1f58, #481c63, #651069);
+      
+   }
+   to{
+      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+      
+   }
+
+}
+
+@keyframes light-dark-back{
+   from{
+      background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+   }
+   to{
+      background-image: linear-gradient(to right top, #051937, #151d49, #2d1f58, #481c63, #651069);
+   }
+
+}
